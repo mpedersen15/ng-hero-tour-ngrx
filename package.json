@@ -3,6 +3,8 @@
     "@ngrx/effects": "^5.2.0",
     "@ngrx/entity": "^5.2.0",
     "@ngrx/router-store": "^5.2.0",
-    "@ngrx/store": "^5.2.0"
+    "@ngrx/store": "^5.2.0",
+    "tslint": "^5.9.1",
+    "typescript": "^2.7.2"
   }
 }

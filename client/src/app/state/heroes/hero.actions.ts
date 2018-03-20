@@ -1,28 +1,28 @@
-import { Action } from "@ngrx/store";
-import { Hero } from "../../core/models/hero.model";
+import { Action } from '@ngrx/store';
+import { Hero } from '../../core/models/hero.model';
 // imports
 
 export enum HeroActionTypes {
-    LoadHeroes = '[Hero] Load Heroes',
-    LoadHeroesSuccess = '[Hero] Load Heroes Success',
-    LoadHeroesFail = '[Hero] Load Heroes Fail'
+    LoadAll = '[Hero] Load Heroes',
+    LoadAllSuccess = '[Hero] Load Heroes Success',
+    LoadAllFail = '[Hero] Load Heroes Fail'
 }
 
-export class LoadHeroes implements Action {
-    readonly type = HeroActionTypes.LoadHeroes;
+export class LoadAll implements Action {
+    readonly type = HeroActionTypes.LoadAll;
 }
 
-export class LoadHeroesSuccess implements Action {
-    readonly type = HeroActionTypes.LoadHeroesSuccess;
+export class LoadAllSuccess implements Action {
+    readonly type = HeroActionTypes.LoadAllSuccess;
 
     constructor(public payload: { heroes: Hero[]}) {}
 }
 
-export class LoadHeroesFail implements Action {
-    readonly type = HeroActionTypes.LoadHeroesFail;
+export class LoadAllFail implements Action {
+    readonly type = HeroActionTypes.LoadAllFail;
 }
 
-export type HeroActions = 
-| LoadHeroes
-| LoadHeroesSuccess
-| LoadHeroesFail;
+export type HeroActions =
+| LoadAll
+| LoadAllSuccess
+| LoadAllFail;

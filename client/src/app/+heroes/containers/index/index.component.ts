@@ -1,15 +1,15 @@
 import { Component, OnInit } from '@angular/core';
-import { MatDialog } from "@angular/material";
+import { MatDialog } from '@angular/material';
 
-import { Observable } from "rxjs/Observable";
+import { Observable } from 'rxjs/Observable';
 
-import { HeroesService } from "../../../core/services/heroes.service";
-import { Hero } from "../../../core/models/hero.model";
-import { AddHeroDialogComponent } from "../../components/add-hero-dialog/add-hero-dialog.component";
+import { HeroesService } from '../../../core/services/heroes.service';
+import { Hero } from '../../../core/models/hero.model';
+import { AddHeroDialogComponent } from '../../components/add-hero-dialog/add-hero-dialog.component';
 import { Store } from '@ngrx/store';
-import { State } from '../../../state/heroes/hero.reducer';
 import { getAllHeroes } from '../../../state/heroes';
-import { LoadHeroes } from '../../../state/heroes/hero.actions';
+import { LoadAll } from '../../../state/heroes/hero.actions';
+import { AppState } from './../../../state/app.interfaces';
 
 @Component({
   selector: 'app-index',
@@ -20,14 +20,14 @@ export class IndexComponent implements OnInit {
 
   heroes: Observable<Array<Hero>>;
 
-  //TODO: use store instead of service
-  constructor(private store: Store<State>, private matDialog: MatDialog) {
+  // TODO: use store instead of service
+  constructor(private store: Store<AppState>, private matDialog: MatDialog) {
   }
 
   ngOnInit() {
     // TODO: dispatch action to store
     // this.heroes = this.heroesService.getHeroes();
-    this.store.dispatch(new LoadHeroes());
+    this.store.dispatch(new LoadAll());
     this.heroes = this.store.select(getAllHeroes);
   }
 
