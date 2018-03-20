@@ -1,0 +1,3 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Hero load all reducer should set loading to true on state 1`] = `true`;

@@ -8,7 +8,7 @@ import { Hero } from '../../../core/models/hero.model';
 import { AddHeroDialogComponent } from '../../components/add-hero-dialog/add-hero-dialog.component';
 import { Store, select } from '@ngrx/store';
 import { getAllHeroes, getLoading, getError } from '../../../state/heroes';
-import { LoadAll } from '../../../state/heroes/hero.actions';
+import { LoadAll, Delete } from '../../../state/heroes/hero.actions';
 import { AppState } from './../../../state/app.interfaces';
 
 @Component({
@@ -44,6 +44,8 @@ export class IndexComponent implements OnInit {
     // TODO: use store for emitting update to the array of heroes
     // this.heroesService.deleteHero(hero)
     //   .subscribe(() => this.heroes = this.heroesService.getHeroes());
+    console.log('Trying to delete', hero);
+    this.store.dispatch(new Delete({hero}));
   }
 
 }

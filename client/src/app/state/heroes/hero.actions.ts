@@ -1,11 +1,13 @@
 import { Action } from '@ngrx/store';
 import { Hero } from '../../core/models/hero.model';
-// imports
 
 export enum HeroActionTypes {
     LoadAll = '[Hero] Load Heroes',
     LoadAllSuccess = '[Hero] Load Heroes Success',
-    LoadAllFail = '[Hero] Load Heroes Fail'
+    LoadAllFail = '[Hero] Load Heroes Fail',
+    Delete = '[Hero] Delete Hero',
+    DeleteSuccess = '[Hero] Delete Hero Success',
+    DeleteFail = '[Hero] Delete Hero Fail'
 }
 
 export class LoadAll implements Action {
@@ -22,7 +24,26 @@ export class LoadAllFail implements Action {
     readonly type = HeroActionTypes.LoadAllFail;
 }
 
+export class Delete implements Action {
+    readonly type = HeroActionTypes.Delete;
+
+    constructor (public payload: {hero: Hero}) {}
+}
+
+export class DeleteSuccess implements Action {
+    readonly type = HeroActionTypes.DeleteSuccess;
+
+    constructor(public payload: { hero: Hero}) {}
+}
+
+export class DeleteFail implements Action {
+    readonly type = HeroActionTypes.DeleteFail;
+}
+
 export type HeroActions =
-| LoadAll
+  LoadAll
 | LoadAllSuccess
-| LoadAllFail;
+| LoadAllFail
+| Delete
+| DeleteSuccess
+| DeleteFail;

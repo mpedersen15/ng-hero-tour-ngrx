@@ -1,0 +1,26 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Hero LoadAll LoadAllSuccess should have heroes payload 1`] = `"[Hero] Load Heroes Success"`;
+
+exports[`Hero LoadAll LoadAllSuccess should have heroes payload 2`] = `
+Object {
+  "heroes": Array [
+    Object {
+      "character": Object {
+        "description": "",
+        "id": 1,
+        "name": "Thor",
+        "thumbnail": "",
+        "urls": Array [
+          "",
+        ],
+      },
+      "id": 1,
+      "name": "Thor",
+      "powers": Array [
+        "Lightning",
+      ],
+    },
+  ],
+}
+`;
