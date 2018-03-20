@@ -5,5 +5,7 @@
       Add Hero
     </button>
   </div>
-  <app-heroes [heroes]="heroes | async" (delete)="delete($event)"></app-heroes>
+  <div *ngIf="loading$ | async">Loading heroes...</div>
+  <div *ngIf="error$ | async">{{ error$ | async }}</div>
+  <app-heroes [heroes]="heroes$ | async" (delete)="delete($event)"></app-heroes>
 </app-layout>

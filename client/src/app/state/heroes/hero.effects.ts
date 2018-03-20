@@ -18,6 +18,7 @@ export class HeroEffects {
         .pipe(
             switchMap(() => this.heroService.getHeroes()),
             map(
+                // (heroes: Hero[]) => new LoadAllFail(),
                 (heroes: Hero[]) => new LoadAllSuccess({ heroes }),
                 catchError(err => of(new LoadAllFail()))
             )
